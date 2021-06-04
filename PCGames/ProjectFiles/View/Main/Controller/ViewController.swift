@@ -6,6 +6,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var saleSwitch: UISwitch!
     @IBOutlet weak var onSaleLabel: UILabel!
     @IBOutlet weak var onSaleViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchTextField: UITextField!
     var presenter: GamesPresentable?
     var gameList: GameList?
     var storeList: StoreList?
@@ -24,6 +25,7 @@ class ViewController: UIViewController {
         fetchGames()
         fetchStores()
         configureSwitch()
+        setSearchFieldDelegate()
     }
     
     func setupGamesTableViewCell() {
@@ -79,9 +81,28 @@ extension ViewController {
     }
 }
 
+extension ViewController: UITextFieldDelegate {
+    func setSearchFieldDelegate() {
+        searchTextField.delegate = self
+        searchTextField.addTarget(self, action: #selector(userTyping), for: UIControl.Event.editingChanged)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.resignFirstResponder()
+        if searchTextField.text == "" {
+            fetchGames()
+        } else {
+            gameList?.game = gameList?.game?.filter{ $0.title?.range(of: searchTextField.text ?? "", options: .caseInsensitive) != nil }
+            dealsTableView.reloadData()
+        }
+        return true
+    }
+}
+
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let count = self.gameList?.game?.count else { return 0 }
+        count == 0 ? dealsTableView.setEmptyMessage("No results") : dealsTableView.restore()
         return count
     }
     
@@ -109,6 +130,12 @@ extension ViewController {
             gameList?.game = gameList?.game?.filter{ $0.salePrice != "0.00" }
             dealsTableView.reloadData()
         } else {
+            fetchGames()
+        }
+    }
+    
+    @objc func userTyping() {
+        if searchTextField.text == "" {
             fetchGames()
         }
     }

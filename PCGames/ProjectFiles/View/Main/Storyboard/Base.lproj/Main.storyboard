@@ -122,6 +122,7 @@
                         <outlet property="onSaleLabel" destination="kQd-Ta-1hA" id="6KF-th-kTP"/>
                         <outlet property="onSaleViewHeightConstraint" destination="7b6-zN-Xu8" id="XEx-VD-6CX"/>
                         <outlet property="saleSwitch" destination="qqS-My-xTh" id="q79-Yu-OMU"/>
+                        <outlet property="searchTextField" destination="H8H-XX-75e" id="9by-eu-Fai"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

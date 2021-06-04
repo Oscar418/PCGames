@@ -67,7 +67,9 @@ extension StoreListViewController {
         }
         return true
     }
-    
+}
+
+extension StoreListViewController {
     @objc func userTyping() {
         if searchTextField.text == "" {
             fetchStores()
@@ -78,6 +80,7 @@ extension StoreListViewController {
 extension StoreListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let count = self.storeList?.store?.count else { return 0 }
+        count == 0 ? storeListTableView.setEmptyMessage("No results") : storeListTableView.restore()
         return count
     }
     
