@@ -1,8 +1,9 @@
 import UIKit
 
 class StoreListViewController: UIViewController {
-
+    
     @IBOutlet weak var storeListTableView: UITableView!
+    @IBOutlet weak var searchTextField: UITextField!
     var storeList: StoreList?
     var storePresenter: StorePresentable?
     let storeDependancyContainer = StoreListDependencyContainer.container()
@@ -12,6 +13,7 @@ class StoreListViewController: UIViewController {
         storePresenter = storeDependancyContainer.resolve(StorePresentable.self)
         storePresenter?.view = self
         setupGamesTableViewCell()
+        setSearchFieldDelegate()
         fetchStores()
     }
     
@@ -44,6 +46,32 @@ extension StoreListViewController {
         }
         showBusyView()
         storePresenter?.fetchStores()
+    }
+}
+
+extension StoreListViewController: UITextFieldDelegate {
+    func setSearchFieldDelegate() {
+        searchTextField.delegate = self
+        searchTextField.addTarget(self, action: #selector(userTyping), for: UIControl.Event.editingChanged)
+    }
+}
+
+extension StoreListViewController {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.resignFirstResponder()
+        if searchTextField.text == "" {
+            fetchStores()
+        } else {
+            storeList?.store = storeList?.store?.filter{ $0.storeName?.range(of: searchTextField.text ?? "", options: .caseInsensitive) != nil }
+            storeListTableView.reloadData()
+        }
+        return true
+    }
+    
+    @objc func userTyping() {
+        if searchTextField.text == "" {
+            fetchStores()
+        }
     }
 }
 

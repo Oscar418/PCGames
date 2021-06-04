@@ -38,7 +38,7 @@
                                     <constraint firstAttribute="height" constant="40" id="qCX-D9-MEQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fBA-tA-vDb">
                                 <rect key="frame" x="16" y="158" width="382" height="570"/>
@@ -68,6 +68,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Stores" image="person.3" catalog="system" id="Pqh-gG-QQn"/>
                     <connections>
+                        <outlet property="searchTextField" destination="bWf-fV-e8b" id="5JU-S2-OKL"/>
                         <outlet property="storeListTableView" destination="fBA-tA-vDb" id="kaz-M1-6Bw"/>
                     </connections>
                 </viewController>
