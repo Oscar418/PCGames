@@ -2,15 +2,12 @@ import Foundation
 import Alamofire
 
 class DataService: DataServiceProtocol {
-    
     let baseURL = "https://www.cheapshark.com/api/1.0"
     
-    func get(with path: Path, city: String, completion: @escaping (Any?, Error?) -> Void) {
-        let url = "\(self.baseURL)\(path.rawValue)"
-//        let parameters = ["q": city,
-//                          "appid": "b1480af94fc55e1d23fe57b19595d5f8"]
-        
-        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding(destination: .queryString)).responseJSON { response in
+    func get(with path: Path, gameID: String, completion: @escaping (Any?, Error?) -> Void) {
+        var url = String()
+        url = gameID == "" ? "\(self.baseURL)\(path.rawValue)" : "\(self.baseURL)\(path.rawValue)?id=\(gameID)"
+        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding(destination: .methodDependent)).responseJSON { response in
             switch (response.result) {
             case .success(let value):
                 completion(value, nil)

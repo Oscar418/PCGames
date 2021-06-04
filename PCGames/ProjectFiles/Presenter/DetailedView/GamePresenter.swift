@@ -1,15 +1,14 @@
 import Foundation
 
-class GamesPresenter: GamesPresentable {
- 
-    var view: GamesPresenterViewable?
-    var interactor: GamesInteractable?
+class GamePresenter: GamePresentable {
+    var view: GamePresenterViewable?
+    var interactor: GameInteractable?
     
     func fetchGame(storeID: String) {
         self.interactor?.fetchGame(storeID: storeID)
     }
     
-    func onFetchGameSuccess(game: Game) {
+    func onFetchGameSuccess(game: GameDetail) {
         self.view?.showOnSuccess(with: game)
     }
     

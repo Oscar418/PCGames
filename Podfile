@@ -9,6 +9,7 @@ target 'PCGames' do
 
   pod 'Swinject'
   pod 'Alamofire'
+  pod 'Kingfisher'
 
   target 'PCGamesTests' do
     inherit! :search_paths
