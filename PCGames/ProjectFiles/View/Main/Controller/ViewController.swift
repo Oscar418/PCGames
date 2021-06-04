@@ -3,12 +3,16 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var dealsTableView: UITableView!
+    @IBOutlet weak var saleSwitch: UISwitch!
+    @IBOutlet weak var onSaleLabel: UILabel!
+    @IBOutlet weak var onSaleViewHeightConstraint: NSLayoutConstraint!
     var presenter: GamesPresentable?
     var gameList: GameList?
     var storeList: StoreList?
     var storePresenter: StorePresentable?
     let dependancyContainer = DependencyContainer.container()
     let storeDependancyContainer = StoreListDependencyContainer.container()
+    var filterIsShown = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +23,17 @@ class ViewController: UIViewController {
         setupGamesTableViewCell()
         fetchGames()
         fetchStores()
+        configureSwitch()
     }
     
     func setupGamesTableViewCell() {
         let nib = UINib(nibName: "GameTableViewCell", bundle: nil)
         dealsTableView.register(nib, forCellReuseIdentifier: "gameCell")
+    }
+    
+    func configureSwitch() {
+        saleSwitch.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
+        saleSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
     }
 }
 
@@ -89,5 +99,32 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         dealDetailViewController.gameID = gameList?.game?[indexPath.row].gameID
         dealDetailViewController.storeList = storeList
         self.present(dealDetailViewController, animated: true, completion: nil)
+    }
+}
+
+extension ViewController {
+    @objc func switchChanged(mySwitch: UISwitch) {
+        let switchStatus = mySwitch.isOn
+        if switchStatus == true {
+            gameList?.game = gameList?.game?.filter{ $0.salePrice != "0.00" }
+            dealsTableView.reloadData()
+        } else {
+            fetchGames()
+        }
+    }
+}
+
+extension ViewController {
+    @IBAction func showFilters(_ sender: Any) {
+        if filterIsShown == false {
+            onSaleViewHeightConstraint.constant = 80
+            onSaleLabel.isHidden = false
+            saleSwitch.isHidden = false
+        } else {
+            onSaleViewHeightConstraint.constant = 45
+            onSaleLabel.isHidden = true
+            saleSwitch.isHidden = true
+        }
+        filterIsShown = !filterIsShown
     }
 }

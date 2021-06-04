@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -37,12 +38,22 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rxx.xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNE-U9-vAY">
-                                <rect key="frame" x="8" y="45" width="272" height="21"/>
+                                <rect key="frame" x="8" y="45" width="37" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="vqN-f5-p6f"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="1" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rxx.xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPk-aE-zHx">
+                                <rect key="frame" x="53" y="45" width="76" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9ap-LL-R8s"/>
+                                    <constraint firstAttribute="width" constant="76" id="zXd-aS-XGs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCc-AV-K8P">
@@ -74,11 +85,12 @@
                             <constraint firstAttribute="trailing" secondItem="ol6-QL-A17" secondAttribute="trailing" id="NeF-we-d3K"/>
                             <constraint firstItem="yCc-AV-K8P" firstAttribute="top" secondItem="Ujq-x0-dLO" secondAttribute="top" constant="16" id="UZB-bA-mSt"/>
                             <constraint firstAttribute="trailing" secondItem="yCc-AV-K8P" secondAttribute="trailing" constant="8" id="aAf-N0-TcV"/>
+                            <constraint firstItem="dPk-aE-zHx" firstAttribute="top" secondItem="yCc-AV-K8P" secondAttribute="bottom" constant="8" symbolic="YES" id="awq-gU-Nme"/>
                             <constraint firstAttribute="bottom" secondItem="ol6-QL-A17" secondAttribute="bottom" id="bI4-m9-sck"/>
                             <constraint firstAttribute="bottom" secondItem="zDM-IL-jMa" secondAttribute="bottom" constant="12" id="cAC-rg-tgr"/>
                             <constraint firstItem="ol6-QL-A17" firstAttribute="top" secondItem="Ujq-x0-dLO" secondAttribute="top" id="fg5-cG-MPY"/>
                             <constraint firstItem="ll4-E0-kLe" firstAttribute="top" secondItem="Ujq-x0-dLO" secondAttribute="top" id="g3l-dA-rYg"/>
-                            <constraint firstAttribute="trailing" secondItem="tNE-U9-vAY" secondAttribute="trailing" constant="8" id="iuP-Kw-gaU"/>
+                            <constraint firstItem="dPk-aE-zHx" firstAttribute="leading" secondItem="tNE-U9-vAY" secondAttribute="trailing" constant="8" id="h5n-cp-vz5"/>
                             <constraint firstItem="tNE-U9-vAY" firstAttribute="top" secondItem="yCc-AV-K8P" secondAttribute="bottom" constant="8" id="lOM-2N-GQg"/>
                             <constraint firstItem="yCc-AV-K8P" firstAttribute="leading" secondItem="Ujq-x0-dLO" secondAttribute="leading" constant="8" id="mKr-c4-Gh4"/>
                             <constraint firstItem="zDM-IL-jMa" firstAttribute="top" secondItem="tNE-U9-vAY" secondAttribute="bottom" constant="18" id="n1h-UY-EoQ"/>
@@ -104,10 +116,16 @@
             <connections>
                 <outlet property="gameImage" destination="ol6-QL-A17" id="7N1-iS-COV"/>
                 <outlet property="gamePriceLabel" destination="tNE-U9-vAY" id="xJZ-ik-svT"/>
+                <outlet property="gameSalePriceLabel" destination="dPk-aE-zHx" id="51n-6M-13e"/>
                 <outlet property="gameTitleLabel" destination="yCc-AV-K8P" id="14i-BQ-hGK"/>
                 <outlet property="viewMoreButton" destination="zDM-IL-jMa" id="WGg-M4-esu"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="178.45982142857142"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

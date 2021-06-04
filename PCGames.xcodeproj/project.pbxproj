@@ -284,14 +284,6 @@
 			path = Stores;
 			sourceTree = "<group>";
 		};
-		2A8236CC2669227E008D3EFA /* Stores */ = {
-			isa = PBXGroup;
-			children = (
-				2A8236CD2669228A008D3EFA /* PresenterViewable */,
-			);
-			path = Stores;
-			sourceTree = "<group>";
-		};
 		2A8236CD2669228A008D3EFA /* PresenterViewable */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +322,7 @@
 		2A8236E5266A2112008D3EFA /* StoresList */ = {
 			isa = PBXGroup;
 			children = (
+				2A8236CD2669228A008D3EFA /* PresenterViewable */,
 				2A8236E8266A215F008D3EFA /* Cell */,
 				2A8236E7266A2125008D3EFA /* Controller */,
 				2A8236E6266A211C008D3EFA /* Storyboard */,
@@ -461,7 +454,6 @@
 			isa = PBXGroup;
 			children = (
 				2A8236E5266A2112008D3EFA /* StoresList */,
-				2A8236CC2669227E008D3EFA /* Stores */,
 				2AC2022D2667D2AD0073A48B /* DetailedView */,
 				2AB58B2A265C0DC900591111 /* Main */,
 			);
