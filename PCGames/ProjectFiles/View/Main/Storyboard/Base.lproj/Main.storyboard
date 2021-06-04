@@ -60,16 +60,28 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="AEh-Gk-4pJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="B8M-W8-e6k">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="8XZ-y4-Bfe"/>
+                        <segue destination="gqQ-2L-fx5" kind="relationship" relationship="viewControllers" id="4hf-co-jcM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQx-42-jep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="123.91304347826087"/>
+        </scene>
+        <!--StoreListStoryboard-->
+        <scene sceneID="NTq-Bg-N3X">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StoreListStoryboard" id="gqQ-2L-fx5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ZJf-Yv-gtX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uYU-Xd-L4W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="536"/>
         </scene>
     </scenes>
     <resources>

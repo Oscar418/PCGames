@@ -28,6 +28,11 @@
 		2A8236E12669307D008D3EFA /* CheaperStoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8236DF2669307D008D3EFA /* CheaperStoresTableViewCell.swift */; };
 		2A8236E22669307D008D3EFA /* CheaperStoresTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A8236E02669307D008D3EFA /* CheaperStoresTableViewCell.xib */; };
 		2A8236E4266A1DC8008D3EFA /* EmptyTableViewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8236E3266A1DC8008D3EFA /* EmptyTableViewMessage.swift */; };
+		2A8236EA266A21F0008D3EFA /* StoreListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8236E9266A21F0008D3EFA /* StoreListStoryboard.storyboard */; };
+		2A8236ED266A24AA008D3EFA /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8236EB266A24AA008D3EFA /* StoreListTableViewCell.swift */; };
+		2A8236EE266A24AA008D3EFA /* StoreListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A8236EC266A24AA008D3EFA /* StoreListTableViewCell.xib */; };
+		2A8236F0266A2800008D3EFA /* StoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8236EF266A2800008D3EFA /* StoreListViewController.swift */; };
+		2A8236F2266A2D14008D3EFA /* StoreImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8236F1266A2D14008D3EFA /* StoreImages.swift */; };
 		2AB58AF2265C0CCB00591111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB58AF1265C0CCB00591111 /* AppDelegate.swift */; };
 		2AB58AF4265C0CCB00591111 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB58AF3265C0CCB00591111 /* SceneDelegate.swift */; };
 		2AB58AF6265C0CCB00591111 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB58AF5265C0CCB00591111 /* ViewController.swift */; };
@@ -105,6 +110,11 @@
 		2A8236DF2669307D008D3EFA /* CheaperStoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheaperStoresTableViewCell.swift; sourceTree = "<group>"; };
 		2A8236E02669307D008D3EFA /* CheaperStoresTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheaperStoresTableViewCell.xib; sourceTree = "<group>"; };
 		2A8236E3266A1DC8008D3EFA /* EmptyTableViewMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewMessage.swift; sourceTree = "<group>"; };
+		2A8236E9266A21F0008D3EFA /* StoreListStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreListStoryboard.storyboard; sourceTree = "<group>"; };
+		2A8236EB266A24AA008D3EFA /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
+		2A8236EC266A24AA008D3EFA /* StoreListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreListTableViewCell.xib; sourceTree = "<group>"; };
+		2A8236EF266A2800008D3EFA /* StoreListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListViewController.swift; sourceTree = "<group>"; };
+		2A8236F1266A2D14008D3EFA /* StoreImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreImages.swift; sourceTree = "<group>"; };
 		2AB58AEE265C0CCB00591111 /* PCGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AB58AF1265C0CCB00591111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AB58AF3265C0CCB00591111 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -269,6 +279,7 @@
 			children = (
 				2A8236C826692004008D3EFA /* StoreList.swift */,
 				2A8236CA26692041008D3EFA /* Store.swift */,
+				2A8236F1266A2D14008D3EFA /* StoreImages.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -312,6 +323,41 @@
 			children = (
 				2A8236DF2669307D008D3EFA /* CheaperStoresTableViewCell.swift */,
 				2A8236E02669307D008D3EFA /* CheaperStoresTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2A8236E5266A2112008D3EFA /* StoresList */ = {
+			isa = PBXGroup;
+			children = (
+				2A8236E8266A215F008D3EFA /* Cell */,
+				2A8236E7266A2125008D3EFA /* Controller */,
+				2A8236E6266A211C008D3EFA /* Storyboard */,
+			);
+			path = StoresList;
+			sourceTree = "<group>";
+		};
+		2A8236E6266A211C008D3EFA /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				2A8236E9266A21F0008D3EFA /* StoreListStoryboard.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		2A8236E7266A2125008D3EFA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2A8236EF266A2800008D3EFA /* StoreListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2A8236E8266A215F008D3EFA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2A8236EB266A24AA008D3EFA /* StoreListTableViewCell.swift */,
+				2A8236EC266A24AA008D3EFA /* StoreListTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -414,6 +460,7 @@
 		2AB58B25265C0D8600591111 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2A8236E5266A2112008D3EFA /* StoresList */,
 				2A8236CC2669227E008D3EFA /* Stores */,
 				2AC2022D2667D2AD0073A48B /* DetailedView */,
 				2AB58B2A265C0DC900591111 /* Main */,
@@ -671,7 +718,9 @@
 				2AC202312667D3650073A48B /* DealViewStoryboard.storyboard in Resources */,
 				2AB58AFB265C0CD000591111 /* Assets.xcassets in Resources */,
 				2AB58AF9265C0CCB00591111 /* Main.storyboard in Resources */,
+				2A8236EA266A21F0008D3EFA /* StoreListStoryboard.storyboard in Resources */,
 				2AC2022C2667C1B30073A48B /* GameTableViewCell.xib in Resources */,
+				2A8236EE266A24AA008D3EFA /* StoreListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,6 +852,7 @@
 				2AB58B3A265C132100591111 /* GamesInteractor.swift in Sources */,
 				2A8236DB26692663008D3EFA /* StoreListDependencyContainer.swift in Sources */,
 				2AB58B50265C253200591111 /* Reachability.swift in Sources */,
+				2A8236F0266A2800008D3EFA /* StoreListViewController.swift in Sources */,
 				2AB58AF6265C0CCB00591111 /* ViewController.swift in Sources */,
 				2AB58B4C265C238600591111 /* Alert.swift in Sources */,
 				2AB58B30265C0FA200591111 /* DataServiceProtocol.swift in Sources */,
@@ -816,6 +866,7 @@
 				2A8236BB266906B0008D3EFA /* GameDetail.swift in Sources */,
 				2AB58B3E265C13A000591111 /* GamesPresenter.swift in Sources */,
 				2AB58B4E265C23AE00591111 /* Thread.swift in Sources */,
+				2A8236F2266A2D14008D3EFA /* StoreImages.swift in Sources */,
 				2A8236C426690AE4008D3EFA /* GameDetailDependencyContainer.swift in Sources */,
 				2AB58B38265C127600591111 /* GamesInteractable.swift in Sources */,
 				2AB58B46265C22B700591111 /* BusyIndicator.swift in Sources */,
@@ -835,6 +886,7 @@
 				2A8236C626691F3B008D3EFA /* StoreDetail.swift in Sources */,
 				2A8236DD266926EE008D3EFA /* CustomAttributedString.swift in Sources */,
 				2A8236E4266A1DC8008D3EFA /* EmptyTableViewMessage.swift in Sources */,
+				2A8236ED266A24AA008D3EFA /* StoreListTableViewCell.swift in Sources */,
 				2AC202332667D3830073A48B /* DealsDetailViewController.swift in Sources */,
 				2AB58B44265C1FC000591111 /* DependencyContrainer.swift in Sources */,
 				2AB58B4A265C233E00591111 /* ErrorHandling.swift in Sources */,

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Stores-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="StoreListViewController" customModule="PCGames" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cheapSharkLogo" translatesAutoresizingMaskIntoConstraints="NO" id="pVg-wN-Cnb">
+                                <rect key="frame" x="122" y="20" width="170" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="72q-2e-MmV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA9-by-ari">
+                                <rect key="frame" x="16" y="80" width="57" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Jsy-uE-2s7"/>
+                                    <constraint firstAttribute="width" constant="57" id="mh9-iG-xSL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search stores by name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWf-fV-e8b">
+                                <rect key="frame" x="16" y="110" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qCX-D9-MEQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fBA-tA-vDb">
+                                <rect key="frame" x="16" y="158" width="382" height="570"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="uWs-Xb-xNu"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="hpH-1T-0D5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fBA-tA-vDb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="57b-8O-TLT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bWf-fV-e8b" secondAttribute="trailing" constant="16" id="BdE-32-mXW"/>
+                            <constraint firstItem="pVg-wN-Cnb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="D2g-wW-QYQ"/>
+                            <constraint firstItem="GA9-by-ari" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Rcd-eX-vwq"/>
+                            <constraint firstItem="bWf-fV-e8b" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="T7A-Hp-Nvo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pVg-wN-Cnb" secondAttribute="trailing" constant="122" id="Vno-J7-LCq"/>
+                            <constraint firstItem="GA9-by-ari" firstAttribute="top" secondItem="pVg-wN-Cnb" secondAttribute="bottom" constant="18" id="Vp0-1a-gp2"/>
+                            <constraint firstItem="fBA-tA-vDb" firstAttribute="top" secondItem="bWf-fV-e8b" secondAttribute="bottom" constant="8" symbolic="YES" id="lUT-Lg-jqd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fBA-tA-vDb" secondAttribute="bottom" constant="8" id="nGd-gk-mhV"/>
+                            <constraint firstItem="bWf-fV-e8b" firstAttribute="top" secondItem="GA9-by-ari" secondAttribute="bottom" constant="8" symbolic="YES" id="o4F-ph-rrY"/>
+                            <constraint firstItem="pVg-wN-Cnb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="122" id="oET-td-Yya"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fBA-tA-vDb" secondAttribute="trailing" constant="16" id="uAH-di-34A"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stores" image="person.3" catalog="system" id="Pqh-gG-QQn"/>
+                    <connections>
+                        <outlet property="storeListTableView" destination="fBA-tA-vDb" id="kaz-M1-6Bw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="123.91304347826087"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cheapSharkLogo" width="400" height="123"/>
+        <image name="person.3" catalog="system" width="128" height="62"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
